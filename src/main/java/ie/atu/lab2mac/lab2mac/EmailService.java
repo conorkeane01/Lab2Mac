@@ -7,4 +7,9 @@ import org.springframework.stereotype.Service;
 @Data
 @Service
 public class EmailService {
+    public String emailmessage(UserDetails user) {
+        String message = "Thank you " + user.getName() + " for your registration";
+        return message;
+    }
+
 }
