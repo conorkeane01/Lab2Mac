@@ -6,9 +6,11 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class UserController {
     private final UserService userService;
+    private final EmailService emailService;
     @Autowired
-    public UserController(UserService userService) {
+    public UserController(UserService userService, EmailService emailService) {
         this.userService = userService;
+        this.emailService = emailService;
     }
 
     @GetMapping("/registerUser/{name}/{email}")
@@ -18,11 +20,10 @@ public class UserController {
     }
 
     //Part B
-/*
+
     @PostMapping("/registerUserBody")
     public String getUser(@RequestBody UserDetails userDetails) {
-        return emailService.sendE(userDetails);
+        return emailService.emailmessage(userDetails);
     }
 
- */
 }
