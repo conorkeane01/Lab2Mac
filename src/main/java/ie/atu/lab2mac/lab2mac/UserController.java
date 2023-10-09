@@ -1,9 +1,7 @@
 package ie.atu.lab2mac.lab2mac;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class UserController {
@@ -18,4 +16,13 @@ public class UserController {
         userService.registerUser(name, email);
         return "name: " + name + " email:" + email;
     }
+
+    //Part B
+/*
+    @PostMapping("/registerUserBody")
+    public String getUser(@RequestBody UserDetails userDetails) {
+        return emailService.sendE(userDetails);
+    }
+
+ */
 }
