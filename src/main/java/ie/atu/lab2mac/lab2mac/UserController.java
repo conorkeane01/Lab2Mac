@@ -16,6 +16,6 @@ public class UserController {
     @GetMapping("/registerUser/{name}/{email}")
     public String getUser(@PathVariable String name, @PathVariable String email) {
         userService.registerUser(name, email);
-        return "Without IOC";
+        return "name: " + name + " email:" + email;
     }
 }
